@@ -54,7 +54,7 @@ class CometChat {
   Future<String> joinGroup() async{
     String status = "";
     try{
-      final bool result = await _platform.invokeMethod('joinGroup', {'GUID': 'dc_superheroes'});
+      final bool result = await _platform.invokeMethod('joinGroup', {'GUID': 'supergroup'});
       if(result){
         status = "Success";
       }else{
@@ -71,7 +71,7 @@ class CometChat {
     String status = "";
     try {
       final bool result = await _platform.invokeMethod('sendMessage',
-          {"ROOM_ID": 'dc_superheroes', "MESSAGE": "$userMessage"});
+          {"ROOM_ID": 'supergroup', "MESSAGE": "$userMessage"});
       if (result) {
         status = "Message send successfully";
       } else {

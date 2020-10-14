@@ -171,7 +171,7 @@ class _MessageScreenState extends State<MessageScreen> {
           children: <Widget>[
             CircleAvatar(
               backgroundImage: AssetImage(
-                  'images/${widget.UID == 'batman' ? 'superman' : 'batman'}.png'),
+                  'images/${widget.UID == 'superhero1' ? 'superhero1' : 'superhero2'}.png'),
               backgroundColor: Colors.white,
             ),
             Flexible(

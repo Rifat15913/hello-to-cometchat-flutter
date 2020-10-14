@@ -24,7 +24,7 @@ class MainActivity : FlutterActivity(), EventChannel.StreamHandler {
         const val appID = "24231cc4ced6c04"
         const val region = "US"
         const val STREAM = "com.sagar.gossip/message"
-        const val listenerID = "com.sagar.gossip.MainActivity"
+        const val listenerID = "com.rifat.gossip.superhero"
     }
 
     override fun configureFlutterEngine(flutterEngine: FlutterEngine) {
@@ -86,14 +86,15 @@ class MainActivity : FlutterActivity(), EventChannel.StreamHandler {
         CometChat.login(uid, apiKey, object : CometChat.CallbackListener<User>() {
             override fun onSuccess(user: User) {
                 Log.e(TAG, user.toString())
-                val mapData = hashMapOf("RESULT" to true, "AVATAR" to user.avatar,
-                        "CREDITS" to user.credits,
-                        "EMAIL" to user.email,
+                val mapData = hashMapOf(
+                        "RESULT" to true,
+                        "AVATAR" to user.avatar,
                         "LAST_ACTIVE" to user.lastActiveAt,
                         "NAME" to user.name,
                         "ROLE" to user.role,
                         "STATUS" to user.status,
-                        "STATUS_MESSAGE" to user.statusMessage)
+                        "STATUS_MESSAGE" to user.statusMessage,
+                )
                 val jsonData = JSONObject(mapData as MutableMap<Any?, Any?>)
                 result.success(jsonData.toString())
             }
@@ -109,7 +110,7 @@ class MainActivity : FlutterActivity(), EventChannel.StreamHandler {
         val messageType: String = CometChatConstants.MESSAGE_TYPE_TEXT
         val receiverType: String = CometChatConstants.RECEIVER_TYPE_GROUP
 
-        val textMessage = TextMessage(receiverID, message, messageType, receiverType)
+        val textMessage = TextMessage(receiverID, message, receiverType)
 
         CometChat.sendMessage(textMessage, object : CometChat.CallbackListener<TextMessage>() {
             override fun onSuccess(p0: TextMessage?) {

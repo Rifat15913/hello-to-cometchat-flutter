@@ -8,7 +8,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  static const API_KEY = "09598c4d81e1fd4eee40486d7cb17f69a69846eb";
+  static const API_KEY = "5baa6aa4b81c321e3949af679961716063d32b61";
   CometChat _cometChat = CometChat();
   bool _showProgress = false;
 
@@ -49,11 +49,11 @@ class _LoginScreenState extends State<LoginScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
                 GestureDetector(
-                  onTap: () => loginUser("batman"),
+                  onTap: () => loginUser("superhero1"),
                   child: batman(),
                 ),
                 GestureDetector(
-                  onTap: () => loginUser("superman"),
+                  onTap: () => loginUser("superhero2"),
                   child: superman(),
                 ),
               ],
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            userImage('images/superman.png'),
+            userImage('images/superhero2.png'),
             SizedBox(height: 5.0),
             Text(
               'Superman',
@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: Container(
         child: Column(
           children: <Widget>[
-            userImage('images/batman.png'),
+            userImage('images/superhero1.png'),
             SizedBox(height: 5.0),
             Text(
               'Batman',
